@@ -28,7 +28,8 @@ Machine Learning project using SVM for venum source prediction with data visuali
 
 ## Data
 
-- i used "student-lifestyle-and-stress" dataset from kaggle 
+- Dataset Source : Kaggle 
+- Dataset License : CC0: Public Domain
 - Dataset Link: https://www.kaggle.com/datasets/jacopoferretti/emergency-triage-venomous-bites-dataset
 
 ## Accuracy
