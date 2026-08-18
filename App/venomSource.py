@@ -17,7 +17,6 @@ sample = pd.DataFrame({
     "Heart_Rate_BPM": [86],
     "Blood_Pressure_Systolic": [72],
     "Local_Swelling": ["Medium"],
-    "Muscle_Paralysis_Present": [0],
     "Blood_Coagulation_Failure": [0]
 })
 

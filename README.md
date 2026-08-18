@@ -1,58 +1,196 @@
-# Venom Source Prediction - SVM -> SVC 
+# Venom Sourve Prediction | SVM 
 
 ## Portfolio Project
 
-Machine Learning project using SVM for venum source prediction with data visualization, preprocessing, feature scaling, and model evaluation.
+A Machine Learning multi-class classification project focused on identifying the source of a bite based on clinical, demographic, and physiological features.
 
-## Features
+The goal of this project is to build a model capable of classifying bite incidents into four categories: **BLACK WIDOW SPIDER**, **HARMLESS INSECT**, **SCORPION**, and **VIPER SNAKE**.
 
-- Data preprocessing
-- Data analysis 
-- EDA 
-- Visulization
-- Data summary 
-- remove Duplicates
-- Removing Outliers 
-- Fill nan data by "mean"
-- Encoding string data by OneHotEncoder
-- StandardScaler 
-- ColumnTransformer 
-- Model evaluation (Accuracy, confusion_matrix, classification_report)  
-- Cross Val Score
-- Make Pipeline 
-- Saved Model and Preprocesser as pickle 
+The model uses patient features such as age, time since bite, heart rate, systolic blood pressure, gender, local swelling, and blood coagulation failure to identify the most likely source of the bite.
 
-## model 
- 
-- SVM -> SVC
+---
 
-## Data
+# Problem Definition
+
+Snakebite and other venomous bites can cause a wide range of clinical symptoms and physiological changes. Identifying the source of a bite based on these clinical features can help support faster and more informed medical assessment.
+
+This project focuses on:
+
+**Can Machine Learning identify the source of a bite based on the patient's demographic, physiological, and clinical features?**
+
+The model uses features such as age, time since the bite, heart rate, systolic blood pressure, gender, local swelling, and blood coagulation failure to classify the source of the bite into one of four categories:
+
+- Black Widow Spider
+- Harmless Insect
+- Scorpion
+- Viper Snake
+
+This is formulated as a **multi-class classification problem**.
+
+---
+
+# Dataset
 
 - Dataset Source : Kaggle 
 - Dataset License : CC0: Public Domain
 - Dataset Link: https://www.kaggle.com/datasets/jacopoferretti/emergency-triage-venomous-bites-dataset
 
-## Accuracy
+Target Variable:
 
-Test Accuracy: 99.63 % 
+`Bite Source Target`
 
-## About Files 
+Classes:
 
-- app/venumSource.py : for running model and get result 
-- data/silent_sting_triage_data_sample.csv
-- pickles/pipeline.pickle: model and preprocessor pickle 
-- pickles/column_transformer.pickle: just ct pickle
-- pickles/classifier.pickle: just model(without preprocess) pickle
-- notebook.ipynb: notebook project
-- README.md
-- requirements.txt
-- .gitignore
-- LICENSE
+- Black_Widow_Spider
+- Harmless_Insect
+- Scorpion
+- Viper_Snake
 
-# For runnig project
-- go to app folder -> venumSource.py
-- this is the file that you can run the model and get answer 
+Selected Features:
 
-# Full Model
-- go to -> notebook.ipynb 
-- this is all code about visulization-preprocessing-model-evaluation-make pickles and ... 
+- Age
+- Time_Since_Bite_Min
+- Heart_Rate_BPM
+- Blood_Pressure_Systolic
+- Gender
+- Local_Swelling
+- Blood_Coagulation_Failure
+
+---
+
+## Data Analysis
+
+- EDA
+- Visulization
+- Dataset inspection
+- Missing value analysis
+- dupilucated analysis
+- Outlires analysis
+- Target distribution analysis
+- Correlation analysis
+- Feature relationship analysis
+
+
+## Data Preprocessing
+
+- Data cleaning
+- Feature selection
+- Remove missing value
+- Label encoding
+- Train/Test split
+
+## Model Development
+
+- Streamlit
+- Webapp link : 
+
+Models:
+
+- SVM Classifier (SVC)
+
+Evaluation:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Cross Validation
+- Confusion Matrix
+- Classification Report 
+
+# Model Performance
+
+Final Model:
+
+SVM Classifier (SVC)
+
+accuracy Results:
+
+| Metric | Score |
+|---|---|
+| test | 99.6316% |
+| train | 99.6392% |
+
+
+5-Fold Cross Validation:
+
+99.63%
+
+Standard Deviation:
+
+0.021
+
+
+---
+
+# Model Interpretation
+
+To understand feature contribution:
+
+- Mutal Information
+- correlation 
+
+
+Important Features:
+
+- Blood_Coagulation_Failure
+- Local_Swelling
+- Blood_Pressure_Systolic
+- Heart_Rate_BPM
+
+
+---
+
+# Repository Structure
+
+```text
+Venom-Source-Prediction/
+│
+├── App/
+│    └── venomSource.py
+│
+├── Pickles/
+│     ├── classifier.pickle
+│     ├── column_transformer.pickle
+│     └── pipeline.py
+│
+├── Images/
+│     ├── confusion_matrix_plot.png
+│     ├── permutation_plot.png
+│     └── corr_plot.png
+│
+├── Data/
+│      └── silent_sting_triage_data_sample.ipynb
+│
+├── webapp/
+│      └── VenomSource.ipynb
+│
+├── notebook.ipynb
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── LICENSE
+```
+
+---
+
+# How To Run with you python
+
+Install requirements: pip install -r requirements.txt
+
+Run prediction:python App/venomSource.py
+
+---
+
+# Technologies
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+- Joblib 
+- Streamlit 
