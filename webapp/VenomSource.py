@@ -12,8 +12,6 @@ st.markdown('''
 # Venom Sorce Prediction  
 ''')
 
-st.sidebar()
-
 st.sidebar.header("User Input Parameters")
 
 Age = st.sidebar.slider("Age", 0, 120, 18)
@@ -62,18 +60,9 @@ if prediction_button:
         time.sleep(0.001)
         my_bar.progress(percent_complete + 1)
 
-    st.subheader("Prediction", text_alignment="center")
+    st.subheader("Prediction")
 
     pre = model.predict(df)
     result = pre[0].replace("_", " ")
 
-    st.markdown(
-        f'''
-        <h3 style="padding: 10px;
-                    border-radius: 15px;
-                    text-align: center;
-                    background-color: #e8f5e9;">
-            {result}
-        </h3>
-        ''',unsafe_allow_html=True)
-    
+    st.success(f"Venom Sorce : {result}")
