@@ -154,11 +154,6 @@ Venom-Source-Prediction/
 │     ├── column_transformer.pickle
 │     └── pipeline.py
 │
-├── Images/
-│     ├── confusion_matrix_plot.png
-│     ├── permutation_plot.png
-│     └── corr_plot.png
-│
 ├── Data/
 │      └── silent_sting_triage_data_sample.ipynb
 │
