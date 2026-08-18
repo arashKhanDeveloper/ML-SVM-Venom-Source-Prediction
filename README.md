@@ -189,3 +189,7 @@ Run prediction:python App/venomSource.py
 - Jupyter Notebook
 - Joblib 
 - Streamlit 
+
+## Author
+
+**Amir Mohammad (Arash) Khanzadeh**

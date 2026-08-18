@@ -66,3 +66,5 @@ if prediction_button:
     result = pre[0].replace("_", " ")
 
     st.success(f"Venom Sorce : {result}")
+
+st.caption("Created by Amir Mohammad (Arash) Khanzadeh")
